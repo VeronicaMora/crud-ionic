@@ -7,8 +7,22 @@
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.dqsdsda
-  <p>
-    If you gecasdsadsst lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      {{ item }}
+    </ion-item>
+  </ion-list>
+  <ion-list>
+      <ion-item>
+        <h2>New note</h2>
+        <p>...</p>
+      </ion-item>
+    </ion-list>
+    <ion-fab right bottom>
+      <button ion-fab mini (click)='createNote()'>
+        <ion-icon name="add">
+        </ion-icon>
+      </button>
+    </ion-fab>
 </ion-content>
