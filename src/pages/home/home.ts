@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NotesPage } from '../notes/notes'
+import { PetitionsProvider } from '../../providers/petitions/petitions'
 
 @Component({
   selector: 'page-home',
@@ -8,7 +9,7 @@ import { NotesPage } from '../notes/notes'
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, public petitions: PetitionsProvider) {
     this.initializeItems();
   }
 
@@ -16,6 +17,12 @@ export class HomePage {
   notes: string[];
 
   initializeItems() {
+    this.petitions.getNotes().subscribe((data: any) => {
+      console.log(data)
+      this.notes = data.data
+    }, (error) => {
+        console.log({ error })
+      })
     this.notes = [
       
     ];
@@ -23,15 +30,7 @@ export class HomePage {
 
 
   getItems(ev) {
-    var val = ev.target.value;
-    if (val && val.trim() != '') {
-      this.notes = this.notes.filter((item) => {
-        return (notes.(falta).toLowerCase().indexOf(val.toLowerCase()) > -1);
-      })
-    }
-    else if(!val || val.trim() == ''){
-      this.initializeItems()
-    }
+    
   }
 
   onCancel(){
