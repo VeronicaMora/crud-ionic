@@ -1,15 +1,22 @@
 <ion-header>
-    <ion-navbar>
-      <ion-title>
-        Ionic Blank
-      </ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  <ion-content padding>
-    The world is your oyster.dqsdsda
-    <p>
-      If you gecasdsadsst lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-    </p>
-  </ion-content>
-  
+
+  <ion-navbar>
+    <ion-title>New note</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <button ion-button round>Save</button>
+  <ion-card>
+    <ion-card-header>
+      <ion-item>
+        <ion-input type="text" placeholder="Title"></ion-input>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-textarea fz-elastic></ion-textarea>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

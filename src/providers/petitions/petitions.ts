@@ -21,5 +21,10 @@ export class PetitionsProvider {
   createNote(title, content){
     return this.http.post('http://localhost:5000/notes', { title, content })
   }
+  updateNote(){
+    return this.http.patch('http://localhost:5000/notes', {})
+  }
+  removeNote(id_note){
+    return this.http.delete('http://localhost:5000/notes', id_note)
+  }
 }
-

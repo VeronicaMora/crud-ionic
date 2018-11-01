@@ -20,11 +20,11 @@
     <form (submit)="doSignup()">
       <ion-item>
         <ion-label stacked>Usuario</ion-label>
-        <ion-input name="username" type="text" placeholder="Usuario"></ion-input>
+        <ion-input name="username" type="text" placeholder="Usuario" [(ngModel)]="username"></ion-input>
       </ion-item>
       <ion-item>
         <ion-label stacked>Contraseña</ion-label>
-        <ion-input name="password" type="password" placeholder="Contraseña"></ion-input>
+        <ion-input name="password" type="password" placeholder="Contraseña" [(ngModel)]="password"></ion-input>
       </ion-item>
       <ion-buttons end>
         <button ion-button round type="submit">Registrarme</button>

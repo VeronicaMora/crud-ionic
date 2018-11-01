@@ -23,19 +23,9 @@ export class HomePage {
     }, (error) => {
         console.log({ error })
       })
-    this.notes = [
-      
-    ];
+    this.notes = [];
   }
 
-
-  getItems(ev) {
-    
-  }
-
-  onCancel(){
-    this.initializeItems()
-  }
 
   createNote(){
     this.navCtrl.push(NotesPage)
