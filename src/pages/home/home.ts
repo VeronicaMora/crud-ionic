@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NotesPage } from '../notes/notes'
 import { PetitionsProvider } from '../../providers/petitions/petitions'
+import { LoginPage } from '../login/login';
 
 @Component({
   selector: 'page-home',
@@ -23,13 +24,22 @@ export class HomePage {
     }, (error) => {
         console.log({ error })
       })
-    this.notes = [];
   }
 
+  getItems(ev: any) {
+    this.initializeItems();
+
+    const val = ev.target.value;
+  }
 
   createNote(){
-    this.navCtrl.push(NotesPage)
-    console.log('asd')
+    this.navCtrl.setRoot(NotesPage)
+    console.log("creando nota nueva")
   }
 
+  logout(){
+    this.navCtrl.setRoot(LoginPage)
+  }
 }
+
+ 
