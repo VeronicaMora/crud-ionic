@@ -40,6 +40,10 @@ export class HomePage {
   logout(){
     this.navCtrl.setRoot(LoginPage)
   }
+
+  search(){
+    console.log("buscando...")
+  }
 }
 
  

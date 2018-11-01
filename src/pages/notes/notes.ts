@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
-
-/**
- * Generated class for the NotesPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { HomePage } from '../home/home';
 
 @IonicPage()
 @Component({
@@ -15,11 +9,21 @@ import { IonicPage, NavController } from 'ionic-angular';
 })
 export class NotesPage {
 
+  items=[];
+
   constructor(public navCtrl: NavController) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad NotesPage');
+  }
+
+  saveNote(){
+    console.log("se guardo la nota");
+    this.navCtrl.setRoot(HomePage);
+  }
+
+  goHome(){
+    this.navCtrl.setRoot(HomePage);
   }
 
 }

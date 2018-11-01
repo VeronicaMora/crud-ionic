@@ -1,5 +1,4 @@
 <ion-header>
-<<<<<<< Updated upstream
   <ion-row>
     <ion-col col-11>
       <ion-title><h2 class="letra">Moga-Notas</h2></ion-title>
@@ -24,31 +23,6 @@
     </ion-col>
   </ion-row>
   <ion-list>
-      <ion-item>
-        <h2>New note</h2>
-        <p>...</p>
-      </ion-item>
-    </ion-list>
-    <ion-fab right bottom>
-      <button ion-fab mini (click)='createNote()'>
-        <ion-icon name="add">
-        </ion-icon>
-      </button>
-    </ion-fab>
-</ion-content>
-=======
-    <ion-title><h2 class="letra">Moga-notas</h2></ion-title>
-    <ion-fab right top>
-      <button ion-fab mini (click)="logout()"><ion-icon name="log-out"></ion-icon></button>
-    </ion-fab>
-</ion-header>
-
-<ion-content padding class="foto">
-  <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
-  <ion-list>
-    <ion-item *ngFor="let item of items">{{ item }}</ion-item>
-  </ion-list>
-  <ion-list>
     <ion-card>
       <ion-item>
         <h2>titulo</h2>
@@ -63,7 +37,6 @@
     </ion-card>
   </ion-list>
   <ion-fab right bottom>
-    <button ion-fab mini (click)="createNote()"><ion-icon name="add"></ion-icon></button>
+    <button ion-fab mini (click)='createNote()'><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 </ion-content>
->>>>>>> Stashed changes

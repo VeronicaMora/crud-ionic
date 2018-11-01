@@ -6,7 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { NotesPage } from '../pages/notes/notes';}
+import { NotesPage } from '../pages/notes/notes';
 import { WelcomePage } from '../pages/welcome/welcome';
 import { ElasticModule } from 'angular2-elastic';
 import { PetitionsProvider } from '../providers/petitions/petitions';
