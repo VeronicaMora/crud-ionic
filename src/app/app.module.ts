@@ -25,6 +25,7 @@ import { RegisterPage } from '../pages/register/register';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     ElasticModule
   ],

@@ -10,7 +10,7 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public petitions: PetitionsProvider) {
+  constructor(private navCtrl: NavController, private petitions: PetitionsProvider) {
     this.initializeItems();
   }
 
@@ -28,7 +28,6 @@ export class HomePage {
 
   getItems(ev: any) {
     this.initializeItems();
-
     const val = ev.target.value;
   }
 
@@ -38,7 +37,9 @@ export class HomePage {
   }
 
   logout(){
-    this.navCtrl.setRoot(LoginPage)
+    console.log('dd')
+    localStorage.removeItem('token')
+    this.navCtrl.setRoot(LoginPage);
   }
 
   search(){

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { HomePage } from '../home/home';
 import { RegisterPage } from '../register/register';
+import { PetitionsProvider } from '../../providers/petitions/petitions'
 
 @IonicPage()
 @Component({
@@ -10,19 +11,22 @@ import { RegisterPage } from '../register/register';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  private username: string = ""
+  private password: string = ""
 
-  ionViewDidLoad() {
+  constructor(public navCtrl: NavController, private petitions: PetitionsProvider) {
   }
 
   doLogin(){
-    this.navCtrl.setRoot(HomePage);
+    this.petitions.login(this.username, this.password).subscribe((data:any) => {
+      localStorage.setItem("token", data.token);
+      this.navCtrl.setRoot(HomePage);
+    }, (error) => {
+      console.log(error)
+    })
   }
 
   register(){
     this.navCtrl.setRoot(RegisterPage);
   }
-
-  
 }

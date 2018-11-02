@@ -14,16 +14,15 @@ export class RegisterPage {
   private username: string = ""
   private password: string = ""
 
-  constructor(public navCtrl: NavController, private petitions: PetitionsProvider) {
+  constructor(private navCtrl: NavController, private petitions: PetitionsProvider) {
   }
 
   doSignup(){
-    this.petitions.signup(this.username, this.password).subscribe((data) => {
-      console.log(data)
+    this.petitions.signup(this.username, this.password).subscribe((data: any) => {
+      localStorage.setItem("token", data.token);
       this.navCtrl.push(HomePage);
     }, (error) => {
       console.log(error)
-      //this.navCtrl.push(RegisterPage)
     })
   }
 

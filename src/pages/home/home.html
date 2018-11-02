@@ -24,15 +24,7 @@
   </ion-row>
   <ion-list>
     <ion-card>
-      <ion-item>
-        <h2>titulo</h2>
-        <p>contenido</p>
-      </ion-item>
-    </ion-card>
-    <ion-card>
-      <ion-item>
-        <h2>titulo 2</h2>
-        <p>contenido 2</p>
+      <ion-item *ngFor="let item of notes">
       </ion-item>
     </ion-card>
   </ion-list>

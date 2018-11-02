@@ -11,16 +11,15 @@
   </ion-row>
 </ion-header>
 
-
 <ion-content padding class="foto">
   <ion-card>
     <ion-card-header>
       <ion-item>
-        <ion-input type="text" placeholder="Titulo"></ion-input>
+        <ion-input type="text" placeholder="Titulo" [(ngModel)]="title"></ion-input>
       </ion-item>
     </ion-card-header>
     <ion-card-content>
-        <ion-textarea fz-elastic placeholder="Escribe algo..."></ion-textarea>
+        <ion-textarea fz-elastic placeholder="Escribe algo..." [(ngModel)]="content"></ion-textarea>
     </ion-card-content>  
   </ion-card>
   <ion-buttons end>
