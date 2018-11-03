@@ -14,26 +14,28 @@ export class HomePage {
     this.initializeItems();
   }
 
-  searchQuery: string = '';
-  notes: string[];
+  notes: any = [];
 
   initializeItems() {
     this.petitions.getNotes().subscribe((data: any) => {
       console.log(data)
-      this.notes = data.data
+      this.notes = data
     }, (error) => {
         console.log({ error })
       })
   }
 
-  getItems(ev: any) {
-    this.initializeItems();
-    const val = ev.target.value;
-  }
-
   createNote(){
     this.navCtrl.setRoot(NotesPage)
     console.log("creando nota nueva")
+  }
+
+  removeNote(id_note){
+    this.petitions.removeNote(id_note).subscribe((data) => {
+      console.log(data)
+    }, (error) => {
+      console.log(error)
+    })
   }
 
   logout(){

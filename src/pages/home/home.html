@@ -23,8 +23,11 @@
     </ion-col>
   </ion-row>
   <ion-list>
-    <ion-card>
-      <ion-item *ngFor="let item of notes">
+    <ion-card *ngFor="let item of notes">
+      <ion-icon name="md-trash" style="padding-left: 250px" (click)='removeNote(item.id_note)'></ion-icon>
+      <ion-item>
+          <h2>{{item.title}}</h2>
+          <p>{{item.content}}</p>
       </ion-item>
     </ion-card>
   </ion-list>
