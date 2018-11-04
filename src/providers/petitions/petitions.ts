@@ -24,8 +24,8 @@ export class PetitionsProvider {
   createNote(title, content){
     return this.http.post('http://localhost:5000/notes', { title, content }, { headers: this.getHeaders() })
   }
-  updateNote(){
-    return this.http.patch('http://localhost:5000/notes', {}, { headers: this.getHeaders() })
+  updateNote(id_note, title, content){
+    return this.http.patch(`http://localhost:5000/notes/${id_note}`, {title, content}, { headers: this.getHeaders() })
   }
   removeNote(id_note){
     return this.http.delete(`http://localhost:5000/notes/${id_note}`, { headers: this.getHeaders() })

@@ -16,7 +16,9 @@ export class HomePage {
     this.initializeItems();
   }
 
-  notes: any = [];
+  private notes: any = [];
+  private input: string = ''
+  private items: any = []
 
   initializeItems() {
     this.petitions.getNotes().subscribe((data: any) => {
@@ -38,12 +40,20 @@ export class HomePage {
     this.navCtrl.setRoot(LoginPage);
   }
 
-  search(){
-    console.log("buscando...")
+  getItems() {
+    if (this.input.trim() != '') {
+      return this.notes.filter((item) => {
+        return (item.title.toLowerCase().indexOf(this.input.toLowerCase()) > -1);
+      })
+    }
+    return this.notes
   }
 
   openNote(note) {
-    let myModal = this.modalCtrl.create(ModalPage, { note });
+    const myModal = this.modalCtrl.create(ModalPage, { note });
+    myModal.onDidDismiss(() => {
+      this.initializeItems()
+    });
     myModal.present();
   }
 

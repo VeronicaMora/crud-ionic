@@ -14,13 +14,17 @@
 
 <ion-content padding class="foto">
   <ion-card>
-    <ion-item>
-      <h2>{{ note.title }}</h2>
-      <p>{{ note.content }}</p>
-    </ion-item>
+    <ion-card-header>
+      <ion-item>
+        <ion-input type="text" placeholder="Titulo" [(ngModel)]="title"></ion-input>
+      </ion-item>
+    </ion-card-header>
+    <ion-card-content>
+        <ion-textarea fz-elastic placeholder="Escribe algo..." [(ngModel)]="content"></ion-textarea>
+    </ion-card-content>  
   </ion-card>
   <ion-fab right bottom>
-    <button ion-fab mini (click)="removeNote(note.id_note)"><ion-icon name="md-trash"></ion-icon></button>
+    <button ion-fab mini (click)="removeNote()"><ion-icon name="md-trash"></ion-icon></button>
   </ion-fab>
   <ion-fab left bottom>
     <button ion-fab mini (click)="updateNote()"><ion-icon name="md-create"></ion-icon></button>

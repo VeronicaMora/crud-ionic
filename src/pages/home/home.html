@@ -12,18 +12,11 @@
 </ion-header>
 
 <ion-content padding class="foto">
-  <ion-row>
-    <ion-col col-9>
-      <ion-item>
-        <ion-input type="text" placeholder="Buscar..."></ion-input>
-      </ion-item>
-    </ion-col>
-    <ion-col col-2>
-      <button ion-button round (click)="search()"><ion-icon name="search"></ion-icon></button>
-    </ion-col>
-  </ion-row>
+  <ion-item>
+    <ion-input type="text" placeholder="Buscar..." [(ngModel)]="input"></ion-input>
+  </ion-item>
   <ion-list>
-    <ion-card *ngFor="let item of notes" (click)="openNote(item)">
+    <ion-card *ngFor="let item of getItems()" (click)="openNote(item)">
       <ion-item>
         <h2>{{ item.title }}</h2>
         <p>{{ item.content }}</p>
