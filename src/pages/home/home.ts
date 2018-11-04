@@ -42,10 +42,8 @@ export class HomePage {
     console.log("buscando...")
   }
 
-  openNote() {
-    let myModal = this.modalCtrl.create(ModalPage);
-    
-    
+  openNote(note) {
+    let myModal = this.modalCtrl.create(ModalPage, { note });
     myModal.present();
   }
 

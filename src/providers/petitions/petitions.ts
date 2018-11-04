@@ -6,7 +6,6 @@ import { Injectable } from '@angular/core';
 export class PetitionsProvider {
 
   constructor(private http: HttpClient) {
-    console.log('Hello PetitionsProvider Provider');
   }
   getHeaders() {
     return new HttpHeaders({
@@ -15,9 +14,6 @@ export class PetitionsProvider {
   }
   getNotes(){
     return this.http.get('http://localhost:5000/notes', { headers: this.getHeaders() })
-  }
-  getNote(id_note){
-    return this.http.get(`http://localhost:5000/notes/${id_note}`, { headers: this.getHeaders() })
   }
   signup(username, password){
     return this.http.post('http://localhost:5000/auth/signup', { username, password })

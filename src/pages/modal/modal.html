@@ -15,25 +15,14 @@
 <ion-content padding class="foto">
   <ion-card>
     <ion-item>
-      <!--<h2>{{ item.title }}</h2>
-      <p>{{ item.content }}</p>-->
+      <h2>{{ note.title }}</h2>
+      <p>{{ note.content }}</p>
     </ion-item>
   </ion-card>
   <ion-fab right bottom>
-    <button ion-fab mini (click)="removeNote(item.id_note)"><ion-icon name="md-trash"></ion-icon></button>
+    <button ion-fab mini (click)="removeNote(note.id_note)"><ion-icon name="md-trash"></ion-icon></button>
   </ion-fab>
   <ion-fab left bottom>
     <button ion-fab mini (click)="updateNote()"><ion-icon name="md-create"></ion-icon></button>
   </ion-fab>
 </ion-content>
-
-
-
-<!--
-  <ion-card *ngFor="let item of notes">
-    <ion-item>
-        <h2>{{item.title}}</h2>
-    </ion-item>
-  </ion-card>
-
-  -->

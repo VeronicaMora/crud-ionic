@@ -10,7 +10,10 @@ import { PetitionsProvider } from '../../providers/petitions/petitions';
 })
 export class ModalPage {
 
+  private note: any;
+  
   constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController, private petitions: PetitionsProvider) {
+    this.note = navParams.get('note');
   }
 
   ionViewDidLoad() {
@@ -32,39 +35,4 @@ export class ModalPage {
     console.log("update")
   }
 
-
-
-
-/*
-openModal() {
-  let obj = {userId: '1', name: 'Bob', email: 'bob@unicorn.com'};
-  let myModal = this.modalCtrl.create(ModalPage, obj);
-  myModal.present();
-}
-
-
-
-  email: string = this.navParams.get('email');
-
-
-
-
-closeModal() {
-  this.viewCtrl.dismiss(userProvidedData);
-}
-
-
-
-userName: string;
-
-openModal() {
-  let myModal = this.modalCtrl.create(ModalPage);
-
-  myModal.onDidDismiss(data => {
-    this.userName = data.userName;
-  });
-
-  myModal.present();
-}
-*/
 }

@@ -23,7 +23,7 @@
     </ion-col>
   </ion-row>
   <ion-list>
-    <ion-card *ngFor="let item of notes" (click)="openNote()">
+    <ion-card *ngFor="let item of notes" (click)="openNote(item)">
       <ion-item>
         <h2>{{ item.title }}</h2>
         <p>{{ item.content }}</p>
