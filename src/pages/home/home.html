@@ -15,7 +15,7 @@
   <ion-row>
     <ion-col col-9>
       <ion-item>
-        <ion-input type="text" placeholder="Bucar..."></ion-input>
+        <ion-input type="text" placeholder="Buscar..."></ion-input>
       </ion-item>
     </ion-col>
     <ion-col col-2>
@@ -23,11 +23,10 @@
     </ion-col>
   </ion-row>
   <ion-list>
-    <ion-card *ngFor="let item of notes">
-      <ion-icon name="md-trash" style="padding-left: 250px" (click)='removeNote(item.id_note)'></ion-icon>
+    <ion-card *ngFor="let item of notes" (click)="openNote()">
       <ion-item>
-          <h2>{{item.title}}</h2>
-          <p>{{item.content}}</p>
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.content }}</p>
       </ion-item>
     </ion-card>
   </ion-list>

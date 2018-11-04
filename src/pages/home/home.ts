@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
-import { NotesPage } from '../notes/notes'
-import { PetitionsProvider } from '../../providers/petitions/petitions'
+import { NotesPage } from '../notes/notes';
+import { PetitionsProvider } from '../../providers/petitions/petitions';
 import { LoginPage } from '../login/login';
+import { ModalController } from 'ionic-angular';
+import { ModalPage } from '../modal/modal';
 
 @Component({
   selector: 'page-home',
@@ -10,7 +12,7 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
-  constructor(private navCtrl: NavController, private petitions: PetitionsProvider) {
+  constructor(private navCtrl: NavController, private petitions: PetitionsProvider, public modalCtrl: ModalController) {
     this.initializeItems();
   }
 
@@ -30,14 +32,6 @@ export class HomePage {
     console.log("creando nota nueva")
   }
 
-  removeNote(id_note){
-    this.petitions.removeNote(id_note).subscribe((data) => {
-      console.log(data)
-    }, (error) => {
-      console.log(error)
-    })
-  }
-
   logout(){
     console.log('dd')
     localStorage.removeItem('token')
@@ -47,6 +41,12 @@ export class HomePage {
   search(){
     console.log("buscando...")
   }
-}
 
- 
+  openNote() {
+    let myModal = this.modalCtrl.create(ModalPage);
+    
+    
+    myModal.present();
+  }
+
+}

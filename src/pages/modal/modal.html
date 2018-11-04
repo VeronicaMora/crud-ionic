@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-row>
+    <ion-col col-1>
+      <ion-fab left top>
+        <button ion-fab mini (click)="closeNote()"><ion-icon name="md-arrow-back"></ion-icon></button>
+      </ion-fab>
+    </ion-col>
+    <ion-col col-11>
+      <ion-title><h2 class="letra">Nota</h2></ion-title>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+
+<ion-content padding class="foto">
+  <ion-card>
+    <ion-item>
+      <!--<h2>{{ item.title }}</h2>
+      <p>{{ item.content }}</p>-->
+    </ion-item>
+  </ion-card>
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="removeNote(item.id_note)"><ion-icon name="md-trash"></ion-icon></button>
+  </ion-fab>
+  <ion-fab left bottom>
+    <button ion-fab mini (click)="updateNote()"><ion-icon name="md-create"></ion-icon></button>
+  </ion-fab>
+</ion-content>
+
+
+
+<!--
+  <ion-card *ngFor="let item of notes">
+    <ion-item>
+        <h2>{{item.title}}</h2>
+    </ion-item>
+  </ion-card>
+
+  -->

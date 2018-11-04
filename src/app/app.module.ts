@@ -12,7 +12,7 @@ import { ElasticModule } from 'angular2-elastic';
 import { PetitionsProvider } from '../providers/petitions/petitions';
 import { LoginPage } from '../pages/login/login';
 import { RegisterPage } from '../pages/register/register';
-
+import { ModalPage } from '../pages/modal/modal';
 
 @NgModule({
   declarations: [
@@ -21,7 +21,8 @@ import { RegisterPage } from '../pages/register/register';
     NotesPage,
     LoginPage,
     RegisterPage,
-    WelcomePage
+    WelcomePage,
+    ModalPage
   ],
   imports: [
     BrowserModule,
@@ -36,7 +37,8 @@ import { RegisterPage } from '../pages/register/register';
     NotesPage,
     LoginPage,
     RegisterPage,
-    WelcomePage
+    WelcomePage,
+    ModalPage
   ],
   providers: [
     StatusBar,
