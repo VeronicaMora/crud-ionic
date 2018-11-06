@@ -35,7 +35,7 @@ export class HomePage {
   }
 
   logout(){
-    console.log('dd')
+    console.log('se cerro sesión')
     localStorage.removeItem('token')
     this.navCtrl.setRoot(LoginPage);
   }
